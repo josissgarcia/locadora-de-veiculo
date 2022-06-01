@@ -8,8 +8,8 @@ public class Locacao {
     String dataLocacao;
     String seguro;
     double vlDesconto;
-    String nomeCliente;
-    String tipoVeiculo;
+    //String nomeCliente;
+    //String tipoVeiculo;
 
     Veiculo veiculo = new Veiculo();
     Carro carro = new Carro();
@@ -37,6 +37,7 @@ public class Locacao {
 
     public Locacao locarVeiculo() {
         this.nomeCliente = JOptionPane.showInputDialog("Qual cliente deseja locar o veículo? ").toUpperCase();
+
         this.tipoVeiculo = JOptionPane.showInputDialog("Qual veículo deseja locar (Nave, Carro, Moto) ? ").toUpperCase();
         this.diasLocacao = Integer.parseInt(JOptionPane.showInputDialog("Quantos dias necessitará do veículo? "));
         this.dataLocacao = JOptionPane.showInputDialog("Qual a data da locação? ");
