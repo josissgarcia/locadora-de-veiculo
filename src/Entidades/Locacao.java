@@ -59,6 +59,7 @@ public class Locacao {
                     vlrLiqLocacao = vlrBrutoLocacao - vlrBrutoLocacao*vlDesconto/100;
                     lista.get(i).setVeiculoDisponivel(false);
                     locacaoOk = true;
+                    break;
                 }
             }
         }
