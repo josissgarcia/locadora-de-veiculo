@@ -49,8 +49,19 @@ public class Cliente implements Serializable {
 
     public Cliente cadastroCliente(){
         this.nome = JOptionPane.showInputDialog("Nome do cliente: ").toUpperCase();
+        while(this.nome.isEmpty()){
+            this.nome = JOptionPane.showInputDialog("Nome do cliente: ").toUpperCase();
+        }
+
         this.cpf = JOptionPane.showInputDialog("Cpf do cliente: ");
+        while(this.cpf.isEmpty()){
+            this.cpf = JOptionPane.showInputDialog("Cpf do cliente: ");
+        }
+
         this.telefone = JOptionPane.showInputDialog("Telefone do cliente: ");
+        while(this.cpf.isEmpty()){
+            this.telefone = JOptionPane.showInputDialog("Telefone do cliente: ");
+        }
         return this;
 
     }
