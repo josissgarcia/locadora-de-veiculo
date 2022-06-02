@@ -50,31 +50,40 @@ public class Main {
                     case 2:
                         String tipoVeiculo = JOptionPane.showInputDialog("Tipo de veículo (Nave, Carro ou Moto): ").toUpperCase();
 
-                        if (tipoVeiculo.equals("NAVE")) {
-                            Nave nave = new Nave();
-                            nave.cadastroNave(tipoVeiculo);
-                            listaVeiculos.add(nave);
+                        try {
+                            if (tipoVeiculo.equals("NAVE")) {
+                                Nave nave = new Nave();
+                                nave.cadastroNave(tipoVeiculo);
+                                listaVeiculos.add(nave);
 
-                        } else if (tipoVeiculo.equals("CARRO")) {
-                            Carro carro = new Carro();
-                            carro.cadastroCarro(tipoVeiculo);
-                            listaVeiculos.add(carro);
+                            } else if (tipoVeiculo.equals("CARRO")) {
+                                Carro carro = new Carro();
+                                carro.cadastroCarro(tipoVeiculo);
+                                listaVeiculos.add(carro);
 
-                        } else if (tipoVeiculo.equals("MOTO")) {
-                            Moto moto = new Moto();
-                            moto.cadastroMoto(tipoVeiculo);
-                            listaVeiculos.add(moto);
+                            } else if (tipoVeiculo.equals("MOTO")) {
+                                Moto moto = new Moto();
+                                moto.cadastroMoto(tipoVeiculo);
+                                listaVeiculos.add(moto);
+                            }
+                            break;
+                        }catch (NumberFormatException e){
+                            JOptionPane.showMessageDialog(null, "Dado invalido! Tente novamente", "ERRO", JOptionPane.ERROR_MESSAGE);
+                            break;
                         }
-                        ;
-                        break;
                     case 3:
                         Cliente clienteLocacao = new Cliente();
                         boolean clienteOK = clienteLocacao.isCliente(JOptionPane.showInputDialog("Qual cliente deseja locar o veículo? ").toUpperCase(), listaCliente);
+
                         if (clienteOK == true) {
-                            Locacao locacao = new Locacao();
-                            locacao.locarVeiculo(listaVeiculos);
+                            try {
+                                Locacao locacao = new Locacao();
+                                locacao.locarVeiculo(listaVeiculos);
+                            }catch (NumberFormatException e){
+                                JOptionPane.showMessageDialog(null, "Dado invalido! Tente novamente", "ERRO", JOptionPane.ERROR_MESSAGE);
+                                break;
+                            }
                         }
-                        ;
                         break;
                     case 4:
                         ArrayList<Veiculo> veiculosDisponiveis = new ArrayList<>();
@@ -99,9 +108,7 @@ public class Main {
                     ManipuladorArquivo.gravarClientes(listaCliente);
                     System.exit(0);
                 default:
-                    JOptionPane.showMessageDialog(null,
-                              "Não é uma opção Invalida!", "ERRO",
-                            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Não é uma opção Invalida!", "ERRO", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
