@@ -1,6 +1,10 @@
 package Entidades;
 
-public class Veiculo {
+import java.io.Serializable;
+
+public class Veiculo implements Serializable {
+
+    private static final long serialVersionUID = -7566448629592086138L;
     private String tipo;
     private double vlDiaria;
     private String descricao;
