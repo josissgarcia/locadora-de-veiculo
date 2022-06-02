@@ -1,4 +1,4 @@
-package Entidades;
+package entidades;
 
 import javax.swing.*;
 import java.io.Serializable;
@@ -30,7 +30,16 @@ public class Nave extends Veiculo implements Serializable {
         this.setDescricao(JOptionPane.showInputDialog("Descreva a marca ou modelo: ").toUpperCase());
         this.setIdentificacaoVeiculo(JOptionPane.showInputDialog("Digite a placa do veículo: "));
         this.setVeiculoDisponivel(true);
-        this.setMotor(JOptionPane.showInputDialog("Qual o motor desejado?\n1 = Atômico \n2 = Combustivel:").equals("1") ? "ATOMICO" : "COMBUSTIVEL");
+        String x = JOptionPane.showInputDialog("Qual o motor desejado?\n1 = Atômico \n2 = Combustivel:");
+        while(! x.equals("1") && ! x.equals("2")){
+            x = JOptionPane.showInputDialog("Qual o motor desejado?\n1 = Atômico \n2 = Combustivel:");
+        }
+        if(x.equals("1")){
+            x = "ATOMICO";
+        } else if(x.equals("2")){
+            x = "COMBUSTIVEL";
+        }
+        this.setMotor(x);
         return this;
 
     }

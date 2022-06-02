@@ -1,4 +1,4 @@
-package Entidades;
+package entidades;
 
 import javax.swing.*;
 import java.io.Serializable;
@@ -29,7 +29,17 @@ public class Moto extends Veiculo implements Serializable {
         this.setDescricao(JOptionPane.showInputDialog("Descreva a marca ou modelo: ").toUpperCase());
         this.setIdentificacaoVeiculo(JOptionPane.showInputDialog("Digite a placa do veículo: "));
         this.setVeiculoDisponivel(true);
-        this.setPartidaEletrica(Boolean.parseBoolean(JOptionPane.showInputDialog("O motor tem partida elétrica( Sim ou Não) ?")));
+        String partida = JOptionPane.showInputDialog("O motor tem partida elétrica( Sim ou Não) ?").toUpperCase();
+        Boolean pBool = false;
+        while(! partida.equals("SIM") && ! partida.equals("NAO") && ! partida.equals("NÃO")){
+            partida = JOptionPane.showInputDialog("O motor tem partida elétrica( Sim ou Não) ?").toUpperCase();
+        }
+        if(partida.equals("SIM")){
+            pBool = true;
+        } else{
+            pBool = false;
+        }
+        this.setPartidaEletrica(pBool);
 
         return this;
 

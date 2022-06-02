@@ -1,4 +1,4 @@
-package Entidades;
+package entidades;
 
 import javax.swing.*;
 import java.io.Serializable;

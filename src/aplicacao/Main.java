@@ -1,6 +1,6 @@
-package Aplicacao;
+package aplicacao;
 
-import Entidades.*;
+import entidades.*;
 import javax.swing.*;
 import java.util.ArrayList;
 

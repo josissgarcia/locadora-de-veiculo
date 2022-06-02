@@ -1,6 +1,4 @@
-package Entidades;
-
-import Exceptions.BusinessExceptions;
+package entidades;
 
 import javax.swing.*;
 import java.io.Serializable;
