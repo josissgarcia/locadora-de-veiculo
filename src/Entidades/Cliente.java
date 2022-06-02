@@ -65,17 +65,11 @@ public class Cliente implements Serializable {
         return this;
 
     }
-    /*
-    private void validarCliente(String nome) throws BusinessExceptions {
-        if(nome != cadastroCliente().getNome(){
-            throw new BusinessExceptions ("Erro: Cliente não cadastrado, realize antes o cadastro do cliente");
-        }
-    }*/
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "\nnome='" + nome + '\'' +
+        return "\nCliente{" +
+                "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", telefone='" + telefone + '\'' +
                 '}';

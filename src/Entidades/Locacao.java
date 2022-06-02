@@ -105,7 +105,7 @@ public class Locacao {
 
     @Override
     public String toString() {
-        return "Locacao{" +
+        return "\nLocacao{" +
                 "diasLocacao=" + diasLocacao +
                 ", dataLocacao='" + dataLocacao + '\'' +
                 ", seguro='" + seguro + '\'' +

@@ -3,27 +3,26 @@ package Aplicacao;
 import Entidades.*;
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
 
         ArrayList<Cliente> listaCliente = ManipuladorArquivo.lerClientes();
         ArrayList<Veiculo> listaVeiculos = ManipuladorArquivo.lerVeiculos();
 
         //Inicializar Dados
-//        Cliente cliente1 = new Cliente("JOSI", "999", "999");
-//        listaCliente.add(cliente1);
-//        Cliente cliente2 = new Cliente("DENNIS", "888", "888");
-//        listaCliente.add(cliente2);
-//        Carro carro1 = new Carro("CARRO", 15, "Ford Ka", "ABC 123456", true, 5);
-//        listaVeiculos.add(carro1);
-//        Moto moto1 = new Moto("MOTO", 10, "Honda", "ABC 123456", true, true);
-//        listaVeiculos.add(moto1);
-//        Nave nave1 = new Nave("NAVE", 10, "Honda", "ABC 123456", true, "ATOMICO");
-//        listaVeiculos.add(nave1);
+        /*
+        Cliente cliente1 = new Cliente("TESTE", "999", "999");
+        listaCliente.add(cliente1);
+        Cliente cliente2 = new Cliente("DENNIS", "888", "888");
+        listaCliente.add(cliente2);
+        Carro carro1 = new Carro("CARRO", 15, "Ford Ka", "ABC 123456", true, 5);
+        listaVeiculos.add(carro1);
+        Moto moto1 = new Moto("MOTO", 10, "Honda", "ABC 123456", true, true);
+        listaVeiculos.add(moto1);
+        Nave nave1 = new Nave("NAVE", 10, "Honda", "ABC 123456", true, "ATOMICO");
+        listaVeiculos.add(nave1);
+        */
 
         int opcoes;
         String firstOpcoes;
@@ -83,6 +82,8 @@ public class Main {
                                 JOptionPane.showMessageDialog(null, "Dado invalido! Tente novamente", "ERRO", JOptionPane.ERROR_MESSAGE);
                                 break;
                             }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Cliente não cadastrado, locação não autorizada!");
                         }
                         break;
                     case 4:

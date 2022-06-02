@@ -62,8 +62,8 @@ public class Veiculo implements Serializable {
 
     @Override
     public String toString() {
-        return "Veiculo{" +
-                "\ntipo='" + tipo + '\'' +
+        return "\nVeiculo{" +
+                "tipo='" + tipo + '\'' +
                 ", vlDiaria=" + vlDiaria +
                 ", descricao='" + descricao + '\'' +
                 ", identificacaoVeiculo='" + identificacaoVeiculo + '\'' +
